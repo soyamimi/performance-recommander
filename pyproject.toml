@@ -1,0 +1,27 @@
+[project]
+name = "performance-recommander"
+version = "0.1.0"
+description = "This project is a personalized performance (concert/theater/musical) recommendation system that uses real-world API data, synthetic user ratings, and multiple recommendation models. The system also integrates fairness evaluation metrics to measure and reduce bias in recommendations."
+authors = [
+    {name = "Seohyun Park"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "dynaconf (>=3.2.11,<4.0.0)",
+    "xmltodict (>=1.0.2,<2.0.0)",
+    "pandas (>=2.3.3,<3.0.0)",
+    "black (>=25.9.0,<26.0.0)",
+    "jupyter (>=1.1.1,<2.0.0)",
+    "matplotlib (>=3.10.6,<4.0.0)",
+    "seaborn (>=0.13.2,<0.14.0)",
+    "scikit-learn (>=1.7.2,<2.0.0)",
+    "spicy (>=0.16.0,<0.17.0)",
+    "mypy (>=1.18.2,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+

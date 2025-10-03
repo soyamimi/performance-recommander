@@ -1,0 +1,16 @@
+# .env files
+.env
+.env.*
+
+# Secrets
+.secrets/
+
+# Lock files
+*.lock
+
+# Data files
+data/
+
+# Python project settings
+.idea/
+__pycache__/
