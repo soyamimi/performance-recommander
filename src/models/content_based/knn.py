@@ -9,7 +9,6 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from pandas import DataFrame
 from scipy.sparse import load_npz, csr_matrix
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.neighbors import NearestNeighbors
@@ -168,7 +167,7 @@ class ModifiedKNNRecommender:
         knn_k: int = 3,
         low_pct: int = 0.7,
         high_pct: int = 0.9,
-    ) -> tuple[DataFrame, DataFrame, DataFrame]:
+    ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         """
         Combine trunk-based and percentile-based recommendations.
 
