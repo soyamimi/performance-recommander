@@ -236,14 +236,14 @@ if __name__ == "__main__":
     classicKNN = ClassicKNNRecommender(X, df_items)
     modifiedKNN = ModifiedKNNRecommender(X, df_items)
 
-    # Example: get recommendations for item at index 235
-    classic_result = classicKNN.recommend(235, top_k=10)
-    _, _, modified_results = modifiedKNN.recommend(235)
+    # Example: get recommendations for item at index 500
+    classic_result = classicKNN.recommend(500, top_k=10)
+    _, _, modified_results = modifiedKNN.recommend(500)
 
     # Display results
     print("-----------------------------------")
     print("Performance :")
-    print(df_items.loc[235])
+    print(df_items.loc[500])
     print("-----------------------------------")
     print("Recommended Items:")
     print("-----------------------------------")

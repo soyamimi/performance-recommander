@@ -161,7 +161,7 @@ if __name__ == "__main__":
 
     # Create the pipeline with specified column types
     pipeline = create_preprocessing_pipeline(
-        categorical_cols=["area", "genrenm", "age"],
+        categorical_cols=["genrenm", "age"],
         numeric_cols=[],
         text_cols=["prfnm", "fcltynm", "sty"],
     )
