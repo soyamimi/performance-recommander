@@ -67,6 +67,65 @@ This experiment helps **validate whether percentile-based selection improves rec
    - Recommend items whose similarity score falls between the 60th and 80th percentile. 
    - In this experimentation, we use the range **between the 70th and 90th percentile**.
    - This step ensures **diversity** and prevents **overspecialization**.
+
+---
+
+##  Findings: Classic KNN vs. Modified KNN in our dataset
+In our dataset, genres are highly imbalanced (e.g., many performances belong to the same category such as pop music). 
+
+When using classic KNN, this leads to overspecialized recommendations:
+
+- Performances with similar genre-heavy features are repeatedly recommended
+- For example, a pop music performance generates only other pop music recommendations
+- Similarity scores stay very high, but diversity is lost
+
+### Benefits of Modified KNN
+- Get recommendations with slightly lower similarity scores, but introduces greater diversity across metadata
+- Reduces bias toward dominant genres in the dataset 
+- Avoids overspecialization and improves user discovery
+
+### Example
+For a user who liked the performance :
+
+
+|       | Performance data                | 
+|-------|---------------------------------|
+| name  | 리도어: Tree Opening Day *Snow     | 
+| venue | 성동구 연무장길 28-16 (구.타임애프터타임) (1층) | 
+| cast  | 이상민, 최승현, 주상욱, 박세웅              | 
+| age   | 만 7세 이상                         | 
+| area  | 서울특별시                           | 
+| genre | 대중음악                            | 
+ 
+the classic KNN would recommend :
+
+| Performance Name                          | Genre    | 
+|-------------------------------------------|----------|
+| NAM WOO HYUN CONCERT, 식목일5: TREE HIGH SCHOOL | 대중음악     |
+| 서울재즈빅밴드, 최성수와 이정식 두 뮤지션의 40년의 음악여정        | 대중음악     | 
+| 7080콘서트 [사천]                              | 대중음악     | 
+| 플랜비프로젝트 콘써어트 X 탐정케이                       | 대중음악     |
+| 청춘고백 [용인]                                 | 대중음악     |
+
+And the modified KNN would suggest :
+
+| Performance Name                          | Genre    | 
+|-------------------------------------------|----------|
+| 푸에르자 부르타: 아벤 [서울] | 뮤지컬     | 
+| 더 나은 휴머니티 [대학로]        | 연극     | 
+| PANDA FIRE                             | 대중음악     | 
+| 喜怒愛楽                     | 대중음악     | 
+| 호야;好夜                                 | 연극     | 
+
+
+### Conclusion
+
+A hybrid KNN (classic + modified ) strategy can provide a better balance by:
+
+- Preserving high-similarity recommendations that match clear user interests
+- Introducing lower-similarity but relevant items to increase diversity and discovery
+- Avoiding genre bias while still respecting user taste
+
 ---
 
 ## References
