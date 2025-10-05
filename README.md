@@ -33,8 +33,8 @@ The project can be extended for:
 
 The recommendation logic is modular, with different approaches under `src/models/`.
 
-| Model Type   | Path                        | Direct Link                                      |
-|--------------|-----------------------------|--------------------------------------------------|
+| Model Type    | Path                        | Direct Link                                      |
+|---------------|-----------------------------|--------------------------------------------------|
 | Content-Based | `src/models/content_based/` | [Content-Based Model](src/models/content_based/) |
 | Collaborative | `src/models/collaborative/` | [Collaborative Model](src/models/collaborative/) |
-| Hybrid       | `src/models/hybrid/`        | [Hybrid Model](src/models/hybrid/)               |
+| Hybrid        | `src/models/hybrid/`        | [Hybrid Model](src/models/hybrid/)               |
