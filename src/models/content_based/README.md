@@ -88,14 +88,14 @@ When using classic KNN, this leads to overspecialized recommendations:
 For a user who liked the performance :
 
 
-|       | Performance data                | 
-|-------|---------------------------------|
-| name  | 리도어: Tree Opening Day *Snow     | 
+|       | Performance data               | 
+|-------|--------------------------------|
+| name  | 리도어: Tree Opening Day *Snow    | 
 | venue | 성동구 연무장길 28-16 (구.타임애프터타임) (1층) | 
-| cast  | 이상민, 최승현, 주상욱, 박세웅              | 
-| age   | 만 7세 이상                         | 
-| area  | 서울특별시                           | 
-| genre | 대중음악                            | 
+| cast  | 이상민, 최승현, 주상욱, 박세웅             | 
+| age   | 만 7세 이상                        | 
+| area  | 서울특별시                          | 
+| genre | 대중음악                           | 
  
 the classic KNN would recommend :
 
@@ -107,7 +107,7 @@ the classic KNN would recommend :
 | 플랜비프로젝트 콘써어트 X 탐정케이                       | 대중음악     |
 | 청춘고백 [용인]                                 | 대중음악     |
 
-And the modified KNN would suggest :
+And the modified KNN would suggest, by percentile method for example :
 
 | Performance Name                          | Genre    | 
 |-------------------------------------------|----------|
@@ -120,7 +120,7 @@ And the modified KNN would suggest :
 
 ### Conclusion
 
-A hybrid KNN (classic + modified ) strategy can provide a better balance by:
+The modified KNN strategy can provide a better balance by:
 
 - Preserving high-similarity recommendations that match clear user interests
 - Introducing lower-similarity but relevant items to increase diversity and discovery

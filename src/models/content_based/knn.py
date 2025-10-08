@@ -165,8 +165,8 @@ class ModifiedKNNRecommender:
         item_index: int,
         trunk_k: int = 5,
         knn_k: int = 3,
-        low_pct: int = 0.7,
-        high_pct: int = 0.9,
+        low_pct: float = 0.7,
+        high_pct: float = 0.9,
     ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         """
         Combine trunk-based and percentile-based recommendations.
@@ -238,7 +238,7 @@ if __name__ == "__main__":
 
     # Example: get recommendations for item at index 500
     classic_result = classicKNN.recommend(500, top_k=10)
-    _, _, modified_results = modifiedKNN.recommend(500)
+    trunk, knn, percentile = modifiedKNN.recommend(500)
 
     # Display results
     print("-----------------------------------")
@@ -249,10 +249,26 @@ if __name__ == "__main__":
     print("-----------------------------------")
     print(classic_result[["prfnm", "genrenm", "score"]])
     print("-----------------------------------")
-    print("Modified KNN:")
+    print("Modified KNN (trunk):")
     print("-----------------------------------")
     print(
-        modified_results[["prfnm", "genrenm", "score"]]
+        trunk[["prfnm", "genrenm", "score"]]
+        .sort_values(by="score", ascending=False)
+        .head(10)
+    )
+    print("-----------------------------------")
+    print("Modified KNN (knn):")
+    print("-----------------------------------")
+    print(
+        knn[["prfnm", "genrenm", "distance"]]
+        .sort_values(by="distance", ascending=True)
+        .head(10)
+    )
+    print("-----------------------------------")
+    print("Modified KNN (percentile):")
+    print("-----------------------------------")
+    print(
+        percentile[["prfnm", "genrenm", "score"]]
         .sort_values(by="score", ascending=False)
         .head(10)
     )
