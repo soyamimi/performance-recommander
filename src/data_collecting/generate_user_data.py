@@ -22,7 +22,7 @@ def generate_user_data(
     )
 
     user_ratings = pd.DataFrame(ratings, columns=df["mt20id"])
-    user_ratings["UserID"] = [f"User_{i+1}" for i in range(nb_users)]
+    # user_ratings["UserID"] = [f"User_{i+1}" for i in range(nb_users)]
 
     save_to_csv(
         user_ratings,
