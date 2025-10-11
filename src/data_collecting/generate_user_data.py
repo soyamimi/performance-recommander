@@ -32,7 +32,7 @@ def generate_user_data(
 
 if __name__ == "__main__":
     generate_user_data(
-        performance_file="performances_2025.csv",
+        performance_file="performances_details_2025.csv",
         nb_users=200,
         user_file_to_create="users_2025.csv",
     )
